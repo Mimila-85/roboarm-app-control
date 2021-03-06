@@ -26,12 +26,12 @@ RoboArm is a web app that allows the user to remote control a robot claw from an
 
 ## Hardware
 
-- Raspberry Pi 4B
+- [Raspberry Pi 4B](https://amzn.to/3kPjoPe)
 - Micro Sd card
-- Adafruit 16-Channel 12-bit PWM/Servo Driver - I2C interface - PCA9685
+- [Adafruit 16-Channel 12-bit PWM/Servo Driver - I2C interface - PCA9685](https://amzn.to/3bieEi3)
 - Power supply for the Adafruit PCA9685
-- Robot claw with 6 degrees of freedom (Less also work, see
-  documentation to connect the correspondent channel in relation to motor
+- [Robot claw with 6 degrees of freedom](https://amzn.to/3biSImM) (Less also work, see
+  documentation to connect the correspondent channel to motor
   location).
 
 ## Installation
@@ -63,8 +63,14 @@ Now you are all set to install our code to your Raspberry Pi.
 npm i
 ```
 
-This will install the packages listed in the `package.json` file. The most important ones to control the claw and to make the connectivity with our app are [adafruit-pca9685](https://github.com/johntreacy/adafruit-pca9685), and [socket.io-client](https://socket.io/docs/v3/client-installation/). 3. Connect the Adafruit PCA9685 to the Raspberry Pi. 4. Connect a power supply to the Adafruit PCA9685. 5. Connect your claw to your Raspberry Pi considering the following channels to the correspondent motor location.
+This will install the packages listed in the `package.json` file. The most important ones to control the claw and to make the connectivity with our app are [adafruit-pca9685](https://github.com/johntreacy/adafruit-pca9685), and [socket.io-client](https://socket.io/docs/v3/client-installation/). 
+
+3. Connect the Adafruit PCA9685 to the Raspberry Pi. 
+4. Connect a power supply to the Adafruit PCA9685. 
+5. Connect your claw to your Raspberry Pi considering the following channels to the correspondent motor location.
+
 ![Motor location with correspondent channel number](https://github.com/Mimila-85/roboarm-app-control/blob/master/client/src/assets/roboArmChannelDistribution.PNG)
+
 The correlations are as follow:
 
 - channel 0 = base
@@ -73,9 +79,12 @@ The correlations are as follow:
 - channel 3 = wrist articulation
 - channel 4 = wrist roll
 - channel 5 = claw
-  Your Raspberry Pi is ready to connect!
+
+Your Raspberry Pi is ready to connect!
 
 ### Web App
+
+This application is deployed with **Heroku** and **MongoDB Atlas**.
 
 - If not yet install, first download [Node.js](https://nodejs.org/).
 - Once Node.js is installed from the command line navigate to the cloned directory and run:
@@ -86,11 +95,14 @@ npm i
 
 This will install the packages listed in the `package.json` file. Which includes [express](https://expressjs.com/), [mongoose](https://mongoosejs.com/), [axios](https://www.npmjs.com/package/axios), [passport](http://www.passportjs.org/), [socket.io](https://socket.io/docs/v3/server-initialization/), [socket.io-client](https://socket.io/docs/v3/client-installation/), and [material-ui](https://material-ui.com/).
 
-- This application is deployed with Heroku and MongoDB Atlas. On file `seeders/seed.js`, comment and uncomment lines 6 and 7 to seed the local database or the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). Run this command on the command line to seed your database accordingly with your selection.
+- Check the file `.env.example` to know which protected variables we are using in this application. Create a `.env` file and add appropriate credentials. The `MONGO_ATLAS_SEED` is found in your MongoDB Atlas.
+- On file `seeders/seed.js`, comment and uncomment lines 6 and 7 to seed the local database or the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). Run this command on the command line to seed your database accordingly with your selection.
 
 ```
-Npm run seed
+npm run seed
 ```
+
+If you deploy using **Heroku**, do not forget to add your `config vars`, keys are `JWT_SECRET` and `MONGODB_URI`, value is the ones you have added to your `.env` file.
 
 ## Usage
 
@@ -110,7 +122,7 @@ At any time the user can click on the **stop** button to stop a motion.
 
 ## Demo
 
-![RoboArm App Control Demo](https://TBD)
+![RoboArm App Control Demo](https://github.com/Mimila-85/roboarm-app-control/blob/master/client/src/assets/roboArmDemo.gif)
 
 ## License
 
@@ -118,7 +130,7 @@ This project is licensed under the terms of the MIT license.
 
 ## Contributing
 
-If you would like to participate on this project, please submit any bugs or feature requests to the contact listed on the `questions` section of this README. You are also welcomed to create a pull request, it will be reviewed and if appropriate it will be implemented.
+If you would like to participate in this project, please submit any bugs or feature requests to the contact listed on the `questions` section of this README. You are also welcomed to create a pull request, it will be reviewed and if appropriate it will be implemented.
 
 ## Questions
 
@@ -126,3 +138,4 @@ If you have any questions about the repo, open an issue or contact one of the te
 
 - [Camila Alves Meyer](https://github.com/Mimila-85)
 - [Tyler Silverman](https://github.com/TylerSilverman)
+
