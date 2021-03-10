@@ -36,7 +36,7 @@ let robotSeed = [
     motions: [
       {
         channel: 1,
-        pulse: 500,
+        pulse: 1000,
       },
     ],
   },
@@ -46,7 +46,7 @@ let robotSeed = [
     motions: [
       {
         channel: 1,
-        pulse: 1000,
+        pulse: 600,
       },
     ],
   },
@@ -56,7 +56,7 @@ let robotSeed = [
     motions: [
       {
         channel: 2,
-        pulse: 500,
+        pulse: 1000,
       },
     ],
   },
@@ -66,7 +66,7 @@ let robotSeed = [
     motions: [
       {
         channel: 2,
-        pulse: 1000,
+        pulse: 750,
       },
     ],
   },
@@ -76,7 +76,7 @@ let robotSeed = [
     motions: [
       {
         channel: 3,
-        pulse: 500,
+        pulse: 2000,
       },
     ],
   },
@@ -86,7 +86,7 @@ let robotSeed = [
     motions: [
       {
         channel: 3,
-        pulse: 1000,
+        pulse: 750,
       },
     ],
   },
@@ -116,7 +116,7 @@ let robotSeed = [
     motions: [
       {
         channel: 5,
-        pulse: 500,
+        pulse: 750,
       },
     ],
   },
@@ -126,7 +126,7 @@ let robotSeed = [
     motions: [
       {
         channel: 5,
-        pulse: 1000,
+        pulse: 2200,
       },
     ],
   },
